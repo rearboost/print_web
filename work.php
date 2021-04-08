@@ -7,6 +7,7 @@
 <!--start head-->
 <?php  include('include/head.php');   ?>
 <!--end head-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js" integrity="sha512-E/yP5UiPXb6VelX+dFLuUD+1IZw/Kz7tMncFTYbtoNSCdRZPFoGN3jZ2p27VUxHEkhbPiLuZhZpVEXxk9wAHCQ==" crossorigin="anonymous"></script>
 
 <body>
     <!-- Header -->
@@ -31,6 +32,7 @@
 
     <!-- Start Our Work -->
     <!-- data-filter does not work properly  -->
+    
     <section class="container py-5">
         <div class="row justify-content-center my-5">
             <div class="filter-btns shadow-md rounded-pill text-center col-auto">
@@ -47,16 +49,15 @@
                 <a 
                 <?php if ($type=='Design')
                     {
-                     echo 'class="filter-btn btn rounded-pill btn-outline-primary border-0 m-md-2 px-md-4 active"';
-                     echo 'data-filter="'.$row["id"].'"';
+                     echo 'class="filter-btn btn rounded-pill btn-outline-primary border-0 m-md-2 px-md-4 view active"';
+                     echo 'data-filter=".'.strtolower($row["type"]).'"';
                     } else {
-                     echo 'class="filter-btn btn rounded-pill btn-outline-primary border-0 m-md-2 px-md-4"'; 
-                     echo 'data-filter="'.$row["id"].'"';
+                     echo 'class="filter-btn btn rounded-pill btn-outline-primary border-0 m-md-2 px-md-4 view"'; 
+                     echo 'data-filter=".'.strtolower($row["type"]).'"';
                     }
                 ?>
-                  href="#" id="<?php echo $row['id']; ?>"> <?php echo $row['type']; ?> </a>
-
-
+                  href="#" id='<?php echo $row['id']; ?>' > <?php echo $row['type']; ?> 
+                </a>
             <?php  
               }
             }
@@ -64,37 +65,11 @@
             </div>
         </div>
 
-        <div class="row designs gx-lg-5">
-            <!-- need to fetch below data according to the above types -->
+        <div id="show"></div>
 
-            <?php
+      
 
-            $pro_sql = mysqli_query($conn,"SELECT P.name as name, P.image as image, T.type as type, T.id AS type_id FROM web_products P JOIN web_product_rel R ON P.id = R.product_id JOIN web_product_type T ON T.id = R.type_id");
-
-            $count = mysqli_num_rows($pro_sql);
-
-            if($count > 0) {
-              while($data = mysqli_fetch_assoc($pro_sql)) {
-            ?>
-
-            <!-- <a href="#" class="col-sm-6 col-lg-4 text-decoration-none Design <?php //echo $data['type']; ?>" style="padding-bottom: 10px;"> -->
-            <a href="#" class="col-sm-6 col-lg-4 text-decoration-none <?php echo $data['type_id']?>" style="padding-bottom: 10px;">
-                <div class="service-work overflow-hidden card mb-5 mx-5 m-sm-0">
-                    <img class="card-img-top" src="<?php echo $_SESSION['basePath'] . $data['image']; ?>" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title light-300 text-dark"><?php echo $data['name'];?></h5>
-                    </div>
-                </div>
-            </a>
-        <?php
-                }
-            }
-        ?>
-        </div>
-
-        <!-- <div class="show"></div> -->
-
-        <div class="row">
+        <!-- <div class="row">
             <div class="btn-toolbar justify-content-center pb-4" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group me-2" role="group" aria-label="First group">
                     <button type="button" class="btn btn-secondary text-white">Previous</button>
@@ -109,7 +84,7 @@
                     <button type="button" class="btn btn-secondary text-white">Next</button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
 
@@ -117,9 +92,9 @@
     <?php include('include/footer.php');?>
     <!-- End Footer -->
 
-
     <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
     <!-- Lightbox -->
     <script src="assets/js/fslightbox.js"></script>
     <script>
@@ -131,12 +106,14 @@
     <script src="assets/js/isotope.pkgd.js"></script>
     <!-- Page Script -->
     <script>
+
         $(window).load(function() {
-            // init Isotope
+
             var $designs = $('.designs').isotope({
-                itemSelector: '.1',
+                itemSelector: '.design',
                 layoutMode: 'fitRows'
             });
+
             $(".filter-btn").click(function() {
                 var data_filter = $(this).attr("data-filter");
                 $designs.isotope({
@@ -148,20 +125,26 @@
                 $(this).addClass("shadow");
                 return false;
             });
+            // init Isotope
+          
         });
 
         // load products according to thier type
-        // $('.view').on('click', function() {
 
-        //     $.ajax({
-        //       url:"products.php",
-        //       method:"POST",
-        //       data:{"id":this.value},
-        //       success:function(data){
-        //         $('#show').html(data);
-        //       }
-        //     });
-        // });
+        $('.view').on('click', function() {
+
+            $.ajax({
+              url:"products.php",
+              method:"POST",
+              data:{"id":this.id},
+              success:function(data){
+
+                alert(data)
+                $('#show').html(data);
+              }
+            });
+        });
+
     </script>
     <!-- Templatemo -->
     <script src="assets/js/templatemo.js"></script>

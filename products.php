@@ -1,4 +1,3 @@
-<!--idatabase connection-->
 <?php  include('include/config.php');   ?>
 
 <div class="row designs gx-lg-5">
@@ -13,15 +12,15 @@
       while($data = mysqli_fetch_assoc($pro_sql)) {
     ?>
 
-    
-    <a href="#" class="col-sm-6 col-lg-4 text-decoration-none Design">
-        <div class="service-work overflow-hidden card mb-5 mx-5 m-sm-0">
-            <img class="card-img-top" src="./assets/img/works-1.png" alt="...">
-            <div class="card-body">
-                <h5 class="card-title light-300 text-dark"><?php $data['name']; ?></h5>
+        <a href="#" class="col-sm-6 col-lg-4 text-decoration-none Design">
+            <div class="service-work overflow-hidden card mb-5 mx-5 m-sm-0">
+                <img class="card-img-top" src="./assets/img/works-1.png" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title light-300 text-dark"><?php $data['name']; ?></h5>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+        
     <?php
         }
     }
