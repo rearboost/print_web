@@ -103,41 +103,47 @@
     <!-- Page Script -->
     <script>
 
-        // $(window).load(function() {
+        $(window).load(function() {
 
-        //     // var $designs = $('.designs').isotope({
-        //     //     itemSelector: '.Design',
-        //     //     layoutMode: 'fitRows'
-        //     // });
+            getWorks(1)
 
-        //     // $(".filter-btn").click(function() {
-        //     //     var data_filter = $(this).attr("data-filter");
-        //     //     $designs.isotope({
-        //     //         filter: data_filter
-        //     //     });
-        //     //     $(".filter-btn").removeClass("active");
-        //     //     $(".filter-btn").removeClass("shadow");
-        //     //     $(this).addClass("active");
-        //     //     $(this).addClass("shadow");
-        //     //     return false;
-        //     // });
-        //     // init Isotope
+            var $designs = $('.designs').isotope({
+                itemSelector: '.design',
+                layoutMode: 'fitRows'
+            });
+
+            $(".filter-btn").click(function() {
+                var data_filter = $(this).attr("data-filter");
+                $designs.isotope({
+                    filter: data_filter
+                });
+                $(".filter-btn").removeClass("active");
+                $(".filter-btn").removeClass("shadow");
+                $(this).addClass("active");
+                $(this).addClass("shadow");
+                return false;
+            });
+            // init Isotope
           
-        // });
+        });
 
         // load products according to thier type
 
         $('.view').on('click', function() {
+            getWorks(this.id)
+        });
 
-            $.ajax({
+        function getWorks(id){
+
+             $.ajax({
               url:"products.php",
               method:"POST",
-              data:{"id":this.id},
+              data:{"id":id},
               success:function(data){
                 $('#show').html(data);
               }
             });
-        });
+        }
 
     </script>
     <!-- Templatemo -->
