@@ -3,11 +3,11 @@
 include('include/config.php'); 
 
 $con = mysqli_connect(DB_HOSTNAME,DB_USERNAME,DB_PASSWORD);
-    mysqli_select_db($con,DB_NAME);
+    mysqli_select_db($conn,DB_NAME);
 
-    if (!$con) 
+    if (!$conn) 
     {
-        die('Could not connect: ' . mysqli_error($con));
+        die('Could not connect: ' . mysqli_error($conn));
     }
 
   if(isset($_POST['submit'])){

@@ -47,7 +47,7 @@
             ?>
                 
                 <a 
-                <?php if ($type=='Design')
+                <?php if ($type_id=='1')
                     {
                      echo 'class="filter-btn btn rounded-pill btn-outline-primary border-0 m-md-2 px-md-4 view active"';
                      echo 'data-filter=".'.strtolower($row["type"]).'"';
@@ -94,12 +94,8 @@
 
     <!-- Bootstrap -->
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
-
     <!-- Lightbox -->
     <script src="assets/js/fslightbox.js"></script>
-    <script>
-        fsLightboxInstances['gallery'].props.loadOnlyCurrentSource = true;
-    </script>
     <!-- Load jQuery require for isotope -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- Isotope -->
@@ -107,27 +103,27 @@
     <!-- Page Script -->
     <script>
 
-        $(window).load(function() {
+        // $(window).load(function() {
 
-            var $designs = $('.designs').isotope({
-                itemSelector: '.design',
-                layoutMode: 'fitRows'
-            });
+        //     // var $designs = $('.designs').isotope({
+        //     //     itemSelector: '.Design',
+        //     //     layoutMode: 'fitRows'
+        //     // });
 
-            $(".filter-btn").click(function() {
-                var data_filter = $(this).attr("data-filter");
-                $designs.isotope({
-                    filter: data_filter
-                });
-                $(".filter-btn").removeClass("active");
-                $(".filter-btn").removeClass("shadow");
-                $(this).addClass("active");
-                $(this).addClass("shadow");
-                return false;
-            });
-            // init Isotope
+        //     // $(".filter-btn").click(function() {
+        //     //     var data_filter = $(this).attr("data-filter");
+        //     //     $designs.isotope({
+        //     //         filter: data_filter
+        //     //     });
+        //     //     $(".filter-btn").removeClass("active");
+        //     //     $(".filter-btn").removeClass("shadow");
+        //     //     $(this).addClass("active");
+        //     //     $(this).addClass("shadow");
+        //     //     return false;
+        //     // });
+        //     // init Isotope
           
-        });
+        // });
 
         // load products according to thier type
 
@@ -138,8 +134,6 @@
               method:"POST",
               data:{"id":this.id},
               success:function(data){
-
-                alert(data)
                 $('#show').html(data);
               }
             });
