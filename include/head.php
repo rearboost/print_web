@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <?php
         session_start();
         $_SESSION['basePath'] = "./assets/img/";

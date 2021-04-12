@@ -51,12 +51,12 @@
                 <?php if ($type=='Design')
                     {
                      echo 'class="filter-btn nav-link btn-outline-primary active shadow rounded-pill text-light px-4 light-300 view"';
-                     //echo 'data-filter='.".".$type.'';
-                     echo 'data-filter="'.$row["type"].'"';
+                     //echo 'data-filter="'.$row["type"].'"';
+                     echo 'data-filter=".'.strtolower($row["type"]).'"';
                     } else {
                      echo 'class="filter-btn nav-link btn-outline-primary rounded-pill text-light px-4 light-300 view"'; 
-                     //echo 'data-filter='.".".$type.'';
-                     echo 'data-filter="'.$row["type"].'"';
+                     //echo 'data-filter="'.$row["type"].'"';
+                     echo 'data-filter=".'.strtolower($row["type"]).'"';
                     }
                 ?>href="#"  id='<?php echo $row['type']; ?>'> <?php echo $row['type']; ?> </a> 
                 </li>
@@ -83,43 +83,55 @@
 
     <!-- Bootstrap -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox -->
+    <script src="assets/js/fslightbox.js"></script>
     <!-- Load jQuery require for isotope -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- Isotope -->
     <script src="assets/js/isotope.pkgd.js"></script>
     <!-- Page Script -->
     <script>
-        // $(window).load(function() {
-        //     // init Isotope
-        //     var $projects = $('.projects').isotope({
-        //         itemSelector: '.Design',
-        //         layoutMode: 'fitRows'
-        //     });
-        //     $(".filter-btn").click(function() {
-        //         var data_filter = $(this).attr("data-filter");
-        //         $projects.isotope({
-        //             filter: data_filter
-        //         });
-        //         $(".filter-btn").removeClass("active");
-        //         $(".filter-btn").removeClass("shadow");
-        //         $(this).addClass("active");
-        //         $(this).addClass("shadow");
-        //         return false;
-        //     });
-        // });
+        $(window).load(function() {
+
+            getFeatures('Design')
+
+            var $designs = $('.designs').isotope({
+                itemSelector: '.design',
+                layoutMode: 'fitRows'
+            });
+
+            $(".filter-btn").click(function() {
+                var data_filter = $(this).attr("data-filter");
+                $designs.isotope({
+                    filter: data_filter
+                });
+                $(".filter-btn").removeClass("active");
+                $(".filter-btn").removeClass("shadow");
+                $(this).addClass("active");
+                $(this).addClass("shadow");
+                return false;
+            });
+            // init Isotope
+          
+        });
+
+        // load products according to thier type
 
         $('.view').on('click', function() {
-            $.ajax({
+            getFeatures(this.id)
+        });
+
+        function getFeatures(id){
+
+             $.ajax({
               url:"trending.php",
               method:"POST",
-              data:{"type":this.id},
-
+              data:{"id":id},
               success:function(data){
-                alert(data)
                 $('#show').html(data);
               }
             });
-        });
+        }
 
         // $('#myModal').modal(options)
     </script>

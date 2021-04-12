@@ -1,4 +1,4 @@
-<!--idatabase connection-->
+<!--database connection-->
 <?php  include('include/config.php');   ?>
 
 <!DOCTYPE html>

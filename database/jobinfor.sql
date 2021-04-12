@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2021 at 01:41 AM
+-- Generation Time: Apr 13, 2021 at 12:31 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.5.30
 
@@ -82,6 +82,76 @@ INSERT INTO `customer` (`id`, `customer_name`, `contact`, `address`) VALUES
 (13, 'chameera senadheera', '011 7892587', 'Colombo 03'),
 (14, 'Dimuthu', '0723445678', 'Kurunegala, colombo '),
 (15, 'Achala Arundathie', '0712123078', 'No:170, Welipenna Rd, Aluthgama.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customertb`
+--
+
+CREATE TABLE `customertb` (
+  `id` int(11) NOT NULL,
+  `nic` varchar(100) NOT NULL,
+  `customerName` text NOT NULL,
+  `contactNo` varchar(100) NOT NULL,
+  `branch` text NOT NULL,
+  `username` varchar(300) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customertb`
+--
+
+INSERT INTO `customertb` (`id`, `nic`, `customerName`, `contactNo`, `branch`, `username`, `password`) VALUES
+(1, '13', 'HAsitha', '0188818811', '', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_orderitemstb`
+--
+
+CREATE TABLE `customer_orderitemstb` (
+  `id` int(11) NOT NULL,
+  `orderId` int(11) NOT NULL,
+  `itemName` varchar(100) NOT NULL,
+  `quantity` varchar(100) NOT NULL,
+  `price` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer_orderitemstb`
+--
+
+INSERT INTO `customer_orderitemstb` (`id`, `orderId`, `itemName`, `quantity`, `price`) VALUES
+(1, 1, 'kuda', '2', '1000'),
+(2, 1, 'books', '4', '1000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_ordertb`
+--
+
+CREATE TABLE `customer_ordertb` (
+  `orderId` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `customerName` varchar(250) NOT NULL,
+  `order_from` varchar(250) DEFAULT NULL,
+  `address` varchar(250) DEFAULT NULL,
+  `contactNo` varchar(250) DEFAULT '0',
+  `deliveryAddress` varchar(250) DEFAULT 'NIL',
+  `status` varchar(300) NOT NULL DEFAULT 'New',
+  `createdDate` varchar(100) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer_ordertb`
+--
+
+INSERT INTO `customer_ordertb` (`orderId`, `userID`, `customerName`, `order_from`, `address`, `contactNo`, `deliveryAddress`, `status`, `createdDate`) VALUES
+(1, 1, 'Hasitha', 'Web', NULL, '0188818811', 'AD', 'Complete', '2021-03-29');
 
 -- --------------------------------------------------------
 
@@ -489,6 +559,28 @@ INSERT INTO `user_level` (`id`, `description`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `web_order`
+--
+
+CREATE TABLE `web_order` (
+  `id` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `sellingPrice` varchar(200) NOT NULL,
+  `product_qty` varchar(200) NOT NULL,
+  `userID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `web_order`
+--
+
+INSERT INTO `web_order` (`id`, `itemid`, `sellingPrice`, `product_qty`, `userID`) VALUES
+(0, 1, '1200.00', '1', 1),
+(1, 3, '180.00', '1', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `web_products`
 --
 
@@ -755,6 +847,24 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `customertb`
+--
+ALTER TABLE `customertb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customer_orderitemstb`
+--
+ALTER TABLE `customer_orderitemstb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customer_ordertb`
+--
+ALTER TABLE `customer_ordertb`
+  ADD PRIMARY KEY (`orderId`);
+
+--
 -- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
@@ -800,6 +910,12 @@ ALTER TABLE `signup`
 -- Indexes for table `user_level`
 --
 ALTER TABLE `user_level`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `web_order`
+--
+ALTER TABLE `web_order`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -889,12 +1005,12 @@ ALTER TABLE `web_products`
 -- AUTO_INCREMENT for table `web_product_rel`
 --
 ALTER TABLE `web_product_rel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 --
 -- AUTO_INCREMENT for table `web_product_type`
 --
 ALTER TABLE `web_product_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `web_trending_products`
 --
