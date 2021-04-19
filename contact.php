@@ -1,14 +1,5 @@
 <?php 
-//database connection
 include('include/config.php'); 
-
-$con = mysqli_connect(DB_HOSTNAME,DB_USERNAME,DB_PASSWORD);
-    mysqli_select_db($conn,DB_NAME);
-
-    if (!$conn) 
-    {
-        die('Could not connect: ' . mysqli_error($conn));
-    }
 
   if(isset($_POST['submit'])){
     $to = ""; // incoming mail address
@@ -29,9 +20,27 @@ $con = mysqli_connect(DB_HOSTNAME,DB_USERNAME,DB_PASSWORD);
 <!DOCTYPE html>
 <html lang="en">
 
-<!--start head-->
-<?php  include('include/head.php');   ?>
-<!--end head-->
+<head>
+    <title>Navigate Printers and Advertising</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="apple-touch-icon" href="assets/img/apple-icon.png"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/small.jpg">
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <?php
+        session_start();
+        $_SESSION['basePath'] = "./assets/img/";
+    ?>
+
+</head>
 
 <body>
     <!-- Header -->

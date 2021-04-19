@@ -9,17 +9,20 @@ if(isset($_POST['itemid']))
 {
     $itemid =$_POST['itemid'];
 	$sellingPrice =$_POST['sellingPrice'];
-	//$product_qty =$_POST['product_qty'];
+	$product_qty =$_POST['product_qty'];
     $userID = $_SESSION["userID"];
 
-    $query ="INSERT INTO  web_order (itemid,sellingPrice,product_qty,userID)  VALUES ('$itemid','$sellingPrice','1','$userID')";
+    $query ="INSERT INTO  web_order (itemid,sellingPrice,product_qty,userID)  VALUES ('$itemid','$sellingPrice','$product_qty','$userID')";
     $result=mysqli_query($conn,$query);
     if($result){
-
-        echo "Successfully Added";
+        $message = "Successfully Added!";
+        echo "<script type='text/javascript'>alert('$message'); </script>";
+        echo "<script type='text/javascript'>window.location.href='../trending.php';</script>";
     }
     else{
-        echo "Unsuccessful Added";
+        $message = "Added Failed!";
+        echo "<script type='text/javascript'>alert('$message'); </script>";
+        echo "<script type='text/javascript'>window.location.href='../details.php';</script>";
     }
 }
 

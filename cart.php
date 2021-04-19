@@ -10,11 +10,11 @@
   <!-- <link rel="apple-touch-icon" href="assets/img/apple-icon.png"> -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/small.jpg">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="styleHome.css">
+  <!-- <link rel="stylesheet" type="text/css" href="styleHome.css"> -->
   <!-- Font CSS -->
   <link href="assets/css/boxicon.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="vendor/owl.carousel.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="vendor/owl.carousel.min.css"> -->
   <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"> 
   <?php
@@ -117,7 +117,7 @@
                             <div class="pull-right">
                                 <button type="submit" name="updates" value="Update Cart" class="btn btn-danger btn-sm">
                                     <!-- <i class="bx-bx-refresh bx-sm text-primary"></i> -->
-                                    Update Cart
+                                    Remove Item
                                 </button>
                                 
                                 
@@ -201,15 +201,15 @@
 
 <script src="vendor/owl.carousel.min.js"></script>
 <script>
-    $('.owl-carousel').owlCarousel({
-        autoplay:true,
-        autoplayHoverPause: true,
-        items:4,
-        nav:true,
-        dots:true,
-        loop:true,
+    // $('.owl-carousel').owlCarousel({
+    //     autoplay:true,
+    //     autoplayHoverPause: true,
+    //     items:4,
+    //     nav:true,
+    //     dots:true,
+    //     loop:true,
 
-    });
+    // });
 </script>
 </body>
 </html> 

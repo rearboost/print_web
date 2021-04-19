@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2021 at 12:31 AM
+-- Generation Time: Apr 19, 2021 at 11:02 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.5.30
 
@@ -104,7 +104,9 @@ CREATE TABLE `customertb` (
 --
 
 INSERT INTO `customertb` (`id`, `nic`, `customerName`, `contactNo`, `branch`, `username`, `password`) VALUES
-(1, '13', 'HAsitha', '0188818811', '', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+(1, '13', 'HAsitha', '0188818811', '', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(2, '984567892V', 'Sachintha', '0771234567', '', 'sa', '202cb962ac59075b964b07152d234b70'),
+(3, '20', 'anne', '077 8956234', '', 'anne', '698d51a19d8a121ce581499d7b701668');
 
 -- --------------------------------------------------------
 
@@ -125,8 +127,14 @@ CREATE TABLE `customer_orderitemstb` (
 --
 
 INSERT INTO `customer_orderitemstb` (`id`, `orderId`, `itemName`, `quantity`, `price`) VALUES
-(1, 1, 'kuda', '2', '1000'),
-(2, 1, 'books', '4', '1000');
+(1, 1, 'T-shirt', '1', '1200.00'),
+(2, 1, 'Key Tag', '1', '175.00'),
+(3, 2, 'T-shirt', '1', '1200.00'),
+(4, 2, 'Couple T-Shirts', '1', '2000.00'),
+(5, 2, 'Key Tag', '2', '175.00'),
+(6, 3, 'T-shirt', '2', '1200.00'),
+(7, 3, 'Couple T-Shirts', '1', '2000.00'),
+(8, 3, 'Key Tag', '4', '175.00');
 
 -- --------------------------------------------------------
 
@@ -151,7 +159,9 @@ CREATE TABLE `customer_ordertb` (
 --
 
 INSERT INTO `customer_ordertb` (`orderId`, `userID`, `customerName`, `order_from`, `address`, `contactNo`, `deliveryAddress`, `status`, `createdDate`) VALUES
-(1, 1, 'Hasitha', 'Web', NULL, '0188818811', 'AD', 'Complete', '2021-03-29');
+(1, 1, 'hasitha', 'Web', NULL, '0188818811', 'Welipenna', 'New', '2021-04-19'),
+(2, 2, 'Sachintha', 'Web', NULL, '0771234567', 'Bentara', 'New', '2021-04-19'),
+(3, 3, 'anne', 'Web', NULL, '077 8956234', 'Alwiz rd, bentota.', 'New', '2021-04-19');
 
 -- --------------------------------------------------------
 
@@ -575,8 +585,8 @@ CREATE TABLE `web_order` (
 --
 
 INSERT INTO `web_order` (`id`, `itemid`, `sellingPrice`, `product_qty`, `userID`) VALUES
-(0, 1, '1200.00', '1', 1),
-(1, 3, '180.00', '1', 1);
+(6, 2, '2000.00', '2', 0),
+(11, 4, '80.00', '1', 3);
 
 -- --------------------------------------------------------
 
@@ -957,6 +967,21 @@ ALTER TABLE `category`
 ALTER TABLE `customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
+-- AUTO_INCREMENT for table `customertb`
+--
+ALTER TABLE `customertb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `customer_orderitemstb`
+--
+ALTER TABLE `customer_orderitemstb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `customer_ordertb`
+--
+ALTER TABLE `customer_ordertb`
+  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
@@ -996,6 +1021,11 @@ ALTER TABLE `signup`
 --
 ALTER TABLE `user_level`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `web_order`
+--
+ALTER TABLE `web_order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `web_products`
 --
