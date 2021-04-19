@@ -80,18 +80,10 @@
                                                     <td>
                                                         <img src='.$_SESSION['basePath'] . $row['image'].' alt="'.$row['product'].'" style="width:40px; height:40px;" class="img-responsive">
                                                     </td>
-                                                    <td>
-                                                    '.$row['product'].'
-                                                    </td>
-                                                    <td>
-                                                    '.$row['product_qty'].'
-                                                    </td>
-                                                    <td>
-                                                    '.$row['sellingPrice'].'
-                                                    </td>
-                                                     <td>
-
-                                                    </td>
+                                                    <td>'.$row['product'].'</td>
+                                                    <td>'.$row['product_qty'].'</td>
+                                                    <td>'.$row['sellingPrice'].'</td>
+                                                    <td></td>
                                                     <td>
                                                         <input type="checkbox" name="remove[]" value='.$row['id'].'>
                                                     </td>

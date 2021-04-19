@@ -1,5 +1,5 @@
 <?php
-// session_start(); 
+//include('include/config.php'); 
 ?>
 <link rel="stylesheet" type="text/css" href="Cart_icon.css">
 <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
@@ -34,11 +34,16 @@
                 </ul>
             </div>
             <div class="navbar align-self-center d-flex">
-                <a class="nav-link" href="cart"><i class='bx bx-cart bx-sm text-primary'></i>
-                <span class='badge badge-warning' id='lblCartCount'></span></a>
-                <!-- <a class="nav-link" href="#"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
-                <a class="nav-link" href="#"><i class='bx bx-power-off bx-sm text-primary'></i></a>
- -->
+
+               
+                <?php if (empty($_SESSION["userID"])): ?>
+                        <a class="nav-link" href="login"><i class='bx bx-cart bx-sm text-primary'></i>
+                        <span class='badge badge-warning' id='lblCartCount'></span></a>
+                <?php else: ?>
+                        <a class="nav-link" href="cart"><i class='bx bx-cart bx-sm text-primary'></i>
+                        <span class='badge badge-warning' id='lblCartCount'></span></a>
+                <?php endif ?>
+
                 <?php
                     if(empty($_SESSION['userID'])){
                         echo '<a href="login.php"><i class="bx bx-user-circle bx-sm text-primary"></i></a>';
@@ -52,6 +57,11 @@
 </nav>
 
 <script>
+ //Url Login To the 
+ // function loginPage(){
+ //  window.location.href = "../login.php";
+ // }
+
  function loadDoc() {
 
         setInterval(function(){ 

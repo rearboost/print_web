@@ -66,11 +66,10 @@
     function addCart(itemid,sellingPrice){
 
       // var product_qty =document.getElementById('product_qty').value; 
-
        $.ajax({
             url:"./controller/order.php",
             method:"POST",
-            data:{"itemid":itemid,sellingPrice:sellingPrice},
+            data:{"itemid":itemid,"sellingPrice":sellingPrice},
             success:function(data){
                 alert(data)
             }
