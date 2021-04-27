@@ -58,34 +58,33 @@ session_start();
                 mysqli_query($conn,$query_Item);
             }
             ///// send mail //////
-            // $product=[];
-            // for ($x = 0; $x < $count; $x++) {
-            //   for ($y = 0; $y < 3; $y++) {
-            //     $product[$x][$y];
-            //   }
-            // }
+            $product=[];
+            for ($x = 0; $x < $count; $x++) {
+              for ($y = 0; $y < 3; $y++) {
+                $product[$x][$y];
+              }
+            }
 
-            // $to = ""; // incoming mail address     
-            // $subject    = "New Order";    
-            // $message    = "Product   | Qty   | Unit Price \n" ;
-            //                 for ($row = 0; $row < $count; $row++) {
-            //                 " " . 
-            //                   for ($col = 0; $col < 3; $col++) {
-            //                    " ".$product[$row][$col]."\t\t";
-            //                   }
-            //                   ."\n"
-            //                 }
-            //               . "\nFrom : ".$name."\nPhone : ".$contactNo;
+            $to = ""; // incoming mail address     
+            $subject    = "New Order";    
+            $message    = "Product   | Qty   | Unit Price \n" ;
+                            for ($row = 0; $row < $count; $row++) {                            
+                              for ($col = 0; $col < 3; $col++) {
+                                $product[$row][$col]."\t\t";
+                              }
+                              ."\n";
+                            }
+                          . "\nFrom : ".$name."\nPhone : ".$contactNo;
 
-            // $headers    = "From : " .$name . "\r\n";
-            // mail($to,$subject,$message,$headers);
+            $headers    = "From : " .$name . "\r\n";
+            mail($to,$subject,$message,$headers);
          
         }
 
         $delete = "DELETE FROM web_order WHERE  userID='$userID';";
         $result = mysqli_query($conn,$delete);
 
-        $message = "Successfully Place Order !! ";
+        $message = "Successfully Place Order!! ";
         echo "<script type='text/javascript'>alert('$message'); </script>";
         echo "<script type='text/javascript'>window.location.href='../features.php';</script>";
 

@@ -18,7 +18,7 @@
                 <div class="col-lg-6 text-start">
                     <h1 class="h2 py-5 text-primary typo-space-line">About Us</h1>
                     <p class="light-300">
-                        <strong>Welcome to NAVIGATE PRINTERS & ADVERTISING</strong> We provide design and printing services to fullfill your requirement.
+                        <strong>“Navigate”</strong> is an independent branding & an experience design company working at the intersection of culture, design, and technology. We value our craft,Have a deep passion for progression, and exist to solve challenges for brands we believe in.Since the beginning, our mission has been to do great work and to have a great time doing it.We believe our mission has guided us well.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -37,8 +37,7 @@
             <div class="col-lg-3">
                 <h2 class="h2 py-5 typo-space-line">Our Team</h2>
                 <p class="text-muted light-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    We are a team of creative thinkers & passionate designers. We always do our best for clients.So, whether you are starting up a new company, or eagerly want to redefine your brand identity,
                 </p>
             </div>
 
@@ -70,45 +69,96 @@
     </section>
     <!-- End Team Member -->
 
-    <!-- Start Our Partner -->
-    <!-- <section class="bg-secondary py-3">
+    <!-- Start Our Esteemed Clients -->
+    <section class="bg-default py-3">
         <div class="container py-5">
-            <h2 class="h2 text-white text-center py-5">Our Partner</h2>
+            <h2 class="h2 text-black text-center py-5">Some Of Our Esteemed Clients</h2>
+            <div class="row text-center">
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client1.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client2.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client3.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client4.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client5.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client6.png"/>
+                </div>
+            </div>
             <div class="row text-center">
                 <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 text-white bx bxs-buildings'></i></a>
-                    </div>
+                    <img src="./assets/img/client7.png"/>
                 </div>
                 <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 bx text-white bxs-check-shield bx-lg'></i></a>
-                    </div>
+                    <img src="./assets/img/client9.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client8.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client10.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client16.png"/>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <img src="./assets/img/client11.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client12.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client13.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client14.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client15.png"/>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client17.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client18.png"/>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <img src="./assets/img/client20.png"/>
                 </div>
                 <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 text-white bx bxs-bolt-circle'></i></a>
-                    </div>
+                    <img src="./assets/img/client19.png"/>
                 </div>
                 <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 text-white bx bxs-spa'></i></a>
-                    </div>
+                    <img src="./assets/img/client21.png"/>
                 </div>
             </div>
         </div>
-    </section> -->
-    <!--End Our Partner-->
+    </section>
+    <!--End Our Esteemed Clients-->
 
     <!-- Start Progress -->
-    <section class="bg-white py-5">
+    <!-- <section class="bg-white py-5">
         <div class="container my-4">
 
             <h2 class="creative-heading h2 pb-3">Creative & Make Perfect Design</h2>
 
             <div class="creative-content row py-3">
                 <div class="col-md-5">
-                    <p class="text-muted col-lg-8 light-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida Risus.
+                    <p class="text-muted col-lg-8 light-300">
+                       <strong> Navigate </strong> is here to make all your dreams come true.
                     </p>
                 </div>
                 <div class="creative-progress col-md-7">
@@ -147,7 +197,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End Progress -->
 
     <!-- Start Choice -->
@@ -160,7 +210,8 @@
                 <div class="banner-content col-lg-7 align-self-end">
                     <h4 class="h4 pb-3">NEED HELP WITH DESIGNING?</h4>
                     <p class="text-muted pb-5 light-300">
-                    Our designers are ready to help you with your <strong> creative needs.</strong> Feel free to drop in to our studio during working hours and speak to one of our representatives.</p>
+                    Our designers are ready to help you with your <strong> creative needs.</strong> Feel free to drop in to our studio during working hours and speak to one of our representatives. <br> <br> <strong> Navigate </strong> is here to make all your dreams come true.</p>
+
                     <a href="contact"><button type="submit" class="btn rounded-pill btn-secondary text-light px-3 light-300" style="margin-bottom: 20px;">Contact Us</button></a>
                 </div>
             </div>
