@@ -22,7 +22,18 @@
 
         <a href="#" class="col-sm-6 col-lg-4 text-decoration-none"style="padding-bottom: 10px;">
             <div class="service-work overflow-hidden card mb-5 mx-5 m-sm-0">
+                <?php
+                    $pic = $data['image'];
+                    if(empty($pic)){
+                ?>
+                <img class="card-img-top" src="./assets/img/works-1.png" alt="<?php echo $data['name']; ?>">
+                <?php
+                    }else{
+                ?>
                 <img class="card-img-top" src="<?php echo $_SESSION['basePath'] . $data['image']; ?>" alt="<?php echo $data['name']; ?>">
+                <?php
+                    }
+                ?>
                 <div class="card-body">
                     <h5 class="card-title light-300 text-dark"><?php echo $data['name']; ?></h5>
                 </div>
